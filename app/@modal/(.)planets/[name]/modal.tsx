@@ -9,6 +9,7 @@ import { NAVIGATION_DURATION } from '@/constants/navigation';
 import PlanetDetail from '@/components/Planet/PlanetDetail';
 
 const duration = NAVIGATION_DURATION / 1000;
+// Navigation_duration => 350 = example: 350 means that the duration of animation 350 milliseconds (MS). Division by 1000 converts it into seconds (0.35 sec).
 
 const Modal = ({ planet }: { planet: IPlanet }) => {
   const { isOpen, open, setIsOpen } = useLayoutNavigationController();
