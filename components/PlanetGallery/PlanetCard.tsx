@@ -38,7 +38,7 @@ const PlanetCard = ({ planet }: PlanetCardProps) => {
           alt={planet.name}
           width={256}
           height={256}
-          className='group-hover:scale-110 transition-all duration-350 w-64 h-64'
+          className='group-hover:scale-110 transition-all duration-350 w-full h-full'
         />
         <motion.div className='absolute bottom-0 inset-0 bg-gradient-to-b from-transparent to-black opacity-0 group-hover:opacity-100 transition-all duration-350 flex justify-center rounded-full p-4'>
           <motion.h2

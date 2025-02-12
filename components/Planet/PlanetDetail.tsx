@@ -16,8 +16,8 @@ const PlanetDetail = ({ planet }: { planet: IPlanet }) => {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMouseOffset({
-        x: (e.clientX - window.innerWidth / 2) * 0.02,
-        y: (e.clientY - window.innerHeight / 2) * 0.02,
+        x: (e.clientX - window.innerWidth / 2) * 0.04,
+        y: (e.clientY - window.innerHeight / 2) * 0.04,
       });
     };
 
@@ -27,12 +27,11 @@ const PlanetDetail = ({ planet }: { planet: IPlanet }) => {
 
   return (
     <motion.article
-      className='w-full min-h-screen flex flex-col items-center relative p-4'
+      className='w-full h-screen overflow-x-hidden flex flex-col items-center relative p-4 remove-scrollbar'
       layoutId={`planet-${planet.name}`}
     >
-      <PlanetImage planet={planet} mouseOffset={mouseOffset} onClose={close} />
-      <div className='flex flex-col z-10 w-full h-full p-4 absolute bottom-0 inset-0 bg-gradient-to-b from-transparent to-black opacity-100 transition-all duration-350 justify-center'>
-        <div className='w-full h-80' />
+      <PlanetImage planet={planet} mouseOffset={mouseOffset} />
+      <div className='flex flex-col z-10 w-full h-full p-4 mt-96 md:mt-44 absolute bottom-0 inset-0 bg-gradient-to-b from-transparent via-black/80 to-black/90 opacity-100 justify-end pointer-events-none'>
         <PlanetHeader name={planet.name} shouldClose={shouldClose} onClose={close} />
         <main className='flex flex-col gap-4 md:flex-row justify-between items-center px-3'>
           <PlanetDescription description={planet.description} />

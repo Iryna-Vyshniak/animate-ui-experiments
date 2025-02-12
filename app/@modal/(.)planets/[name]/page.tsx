@@ -1,11 +1,11 @@
 import planetsData from '@/data/planets.json';
 import { notFound } from 'next/navigation';
-import Modal from './Modal';
+import Modal from './modal';
 
 const Page = async ({ params }: { params: Promise<{ name: string }> }) => {
   const { name } = await params;
   const { planets } = planetsData;
-  const planet = planets.find((planet) => planet.name === name);
+  const planet = planets.find((planet) => planet.name.toLowerCase() === name.toLowerCase());
   if (!planet) {
     notFound();
   }

@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${spaceMono.variable} ${inter.variable} antialiased`}>
+      <body className={`${spaceMono.variable} ${inter.variable} antialiased remove-scrollbar`}>
         {children}
         {modal}
       </body>
